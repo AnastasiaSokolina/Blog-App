@@ -1,0 +1,28 @@
+@import './Styles/base.scss';
+
+html {
+    min-height: 100%;
+    body {
+      font-family: $primaryFont;
+      min-height: 100vh;
+  
+      #root {
+        min-height: inherit;
+      }
+    }
+}
+  
+  .layout__layout{
+    flex-direction: column;
+    min-height: inherit;
+  
+    .layout__header{
+      background-color: #FFFFFF;
+      min-height: 80px;
+      padding: 0 24px;
+    }
+  
+    .layout__content{
+      flex-grow: 1 ;
+    }
+}

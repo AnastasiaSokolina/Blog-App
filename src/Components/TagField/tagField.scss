@@ -1,0 +1,41 @@
+.createArticle__tagList{
+    width: 70%;
+  
+    li{
+      margin-bottom: 10px;
+      label{
+        display: flex;
+        gap: 18px;
+        align-items: center;
+  
+        input {
+          max-width: 300px;
+        }
+  
+  
+        .createArticle__deleteBtn {
+          height: 40px;
+          width: 120px;
+          font-size: 16px;
+        }
+        .createArticle__addTagBtn {
+          display: none;
+        }
+  
+      }
+  
+      &:last-child{
+        .createArticle__addTagBtn{
+          display: block;
+          height: 40px;
+          width: 120px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  .createArticle__addTagBtn{
+    height: 40px;
+    width: 120px;
+    font-size: 16px;
+}

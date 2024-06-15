@@ -1,0 +1,125 @@
+@import '../../Styles//base.scss';
+
+.articleItem{
+ 
+    header{
+      min-height: 70px;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+  
+      &.total{
+        padding: 10px 0;
+  
+  
+        .articleItem__userInfo{
+          height: 107px;
+          width: 180px;
+          display: flex;
+          flex-direction:column ;
+          justify-content: space-between;
+          align-items: flex-end;
+  
+  
+  
+          &.isMyArticle{
+            .articleItem__btnGroup{
+              display: flex;
+              gap: 12px;
+              width: 100%;
+  
+              &>*{
+                flex-grow: 1;
+              }
+  
+              .edit{
+                height: 40px;
+                width: 65px;
+                border-radius: 5px;
+                
+                border: 1px solid $firstAccentColor;
+                color: $firstAccentColor;
+                text-align: center;
+                position: relative;
+  
+                span{
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                }
+              }
+              button.delete{
+                padding: 0;
+                height: 40px;
+                width: 70px;
+              }
+            }
+          }
+    
+  
+        }
+      }
+  
+      .articleItem__userInfo{
+        height: 107px;
+        display: flex;
+        flex-direction:column ;
+        justify-content: space-between;
+  
+  
+        .articleItem__btnGroup{
+          display: none;
+        }
+      }
+  
+      .articleItem__info{
+  
+        .articleItem__titleField{
+          display: flex;
+          gap: 10px;
+          height: 22px;
+        }
+        
+      }
+  
+    
+      h2 {
+        color: #1890FF;
+        font-size: 20px;
+        max-width: 600px;
+  
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; 
+      }
+  
+      .articleItem__tagList{
+        margin-top: 10px;
+        
+  
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; 
+      }
+  
+      p{
+        color: rgba($color: #000000, $alpha: 0.75);
+        line-height: 1.83;
+        font-size: 12px;
+  
+        max-width: 600px;
+        max-height: 65px;
+        overflow-y: hidden;
+  
+        overflow-wrap: anywhere;
+        text-overflow: ellipsis; 
+  
+        &.total{
+           color: rgba($color: #000000, $alpha: 0.5);
+           margin-top: 15px;
+        }
+      }
+    }
+}

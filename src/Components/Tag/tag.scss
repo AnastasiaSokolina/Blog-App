@@ -1,0 +1,15 @@
+@import '../../Styles/base.scss';
+
+.tag{
+    border: 1px solid $secondColor;
+    border-radius: 2px;
+    padding: 4px;
+    color: $secondColor;
+    font-size: 12px;
+  
+    max-width: 150px;
+  
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}

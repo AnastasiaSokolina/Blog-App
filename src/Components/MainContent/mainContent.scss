@@ -1,0 +1,11 @@
+.content__container{
+    max-width: 938px;
+    margin: 0 auto;
+    min-height: calc(100vh - 82px);
+  
+    .articlesList__spinner{
+      text-align: center;
+      width: 100%;
+      margin: 50px auto;
+    }
+}

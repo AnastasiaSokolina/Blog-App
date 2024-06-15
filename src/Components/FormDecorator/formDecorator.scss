@@ -1,0 +1,157 @@
+@import '../../Styles/base.scss';
+
+.formDecorator{
+    width:  100%;
+    min-height: 100px;
+  
+    .formDecorator__container{
+      width: 523px;
+      margin: 0 auto;
+  
+      .formDecorator__block{
+        width: 100%;
+        margin: 60px 0;
+        background-color: #FFFFFF;
+        padding: 48px 32px;
+        border: 1px solid #D9D9D9;
+        border-radius: 6px;
+  
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+  
+          h4{
+            margin: 5px 0;
+            font-size: 16px;
+            color: #262626;
+            
+          }
+  
+          label {
+  
+            &.agreeField {
+              min-height: 25px;
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              font-size: 14px;
+              color:  #595959;
+              line-height: 1.57;
+              
+  
+              &>input {
+                width: 16px;
+                height: 22px;
+                margin: 0;
+              }
+  
+            }
+  
+            input:not([type='checkbox']), textarea{
+              height: 40px;
+              width: 100%;
+              font-size: 16px;
+              border-radius: 4px;
+              border: 1px solid #D9D9D9;
+              padding: 10px;
+              letter-spacing: 0.025rem;
+  
+    
+    
+              &:focus{
+                outline: 1px solid $thirdColor;
+                border: none;
+                box-shadow: none;
+              }
+    
+              &.doNotValidates {
+                outline: 1px solid $errorColor;
+              }
+    
+              &+p{
+                color: $errorColor;
+                margin-top: 8px;
+                font-size: 14px;
+              }
+            }
+            textarea{
+              max-width: 100%;
+              min-width: 100%;
+              font-family: $secondaryFont;
+            }
+          }
+  
+          label.agreeField{
+            padding-left: 1.5em;
+            
+            input {
+              appearance: none;
+              position: absolute;
+              width: 0;
+              height: 0;
+  
+              &.doNotValidates{
+  
+                &+ span.checkmark {
+                  border: 1px solid $errorColor; 
+                }
+              }
+              
+  
+              &+ span.checkmark {
+                position: absolute;
+                width: 16px;
+                height: 16px;
+                border-radius: 2px;
+                border: 1px solid $secondColor;
+                margin-left: -1.5em;
+                transition-duration:0.1s ;
+              }
+  
+              &:checked+ span.checkmark{
+                background-color: $thirdColor;
+                background-image: url('./check.svg');
+                background-repeat: no-repeat;
+                background-position: center center;
+                border: none;
+              }
+  
+              &:focus+ span.checkmark{
+                border: 2px solid black ;
+              }
+            }
+          }
+          button[type='submit']{
+            background-color: $thirdColor;
+            margin-top: 20px;
+          }
+  
+          .errorMessage{
+            color: $errorColor;
+            font-size: 16px;
+          }
+        }
+  
+        .formDecorator__title{
+          text-align: center;
+          color: #262626;
+          line-height: 1.4;
+          font-weight: 600;
+          font-family: Roboto;
+          letter-spacing: 0.025em;
+          font-size: 20px;
+          margin-bottom: 21px;
+        }
+  
+        .decorator__Btn{
+          height: 40px;
+        }
+  
+        .decorator__info{
+          text-align: center;
+          color: #8C8C8C;
+        }
+      }
+    }
+}

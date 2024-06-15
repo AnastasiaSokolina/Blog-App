@@ -1,0 +1,117 @@
+@import '../../Styles/base.scss';
+
+.header{
+    background-color: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: inherit;
+  
+    h1{
+      a{
+        color:  black;
+        font-size: 18px;
+        line-height: 1.5;
+      }
+    }
+    
+    .header__btnGroup {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+  
+      a.header__signUpBtn{
+        width: 89px;
+        height: 51px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition-duration: 0.1s;
+        font-size: 18px;
+        border: 1px solid $firstAccentColor;
+        border-radius: 5px;
+        border-color: $firstAccentColor;
+        color : $firstAccentColor;
+  
+        border-color: $firstAccentColor;
+        color : $firstAccentColor;
+      
+        &:hover{
+          border-color: rgba($color: $firstAccentColor, $alpha: 0.5) !important;
+          color : rgba($color: $firstAccentColor, $alpha: 0.5) !important;
+        }
+      }
+  
+      a.header__signInBtn{
+        width: 89px;
+        height: 51px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition-duration: 0.1s;
+        font-size: 18px;
+  
+        border-color: transparent;
+        box-shadow: none;
+        color: rgba($color: #000000, $alpha: 0.85);
+  
+  
+        &:hover{
+          border-color: rgba($color: #000000, $alpha: 0.1) !important;
+          color : rgba($color: #000000, $alpha: 0.5) !important;
+          border: 1px solid $secondColor;
+          border-radius: 5px;
+        }
+      }
+    }
+  
+    .header__btnGroup_logined{
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      
+      .header__createArticleLink{
+        position: relative;
+        display: block;
+        font-size: 14px;
+        width: 112px;
+        height: 31.1px;
+        border: 1px solid $firstAccentColor; 
+        border-radius: 5px;
+        color: $firstAccentColor;
+        font-size: 14px;
+        background-color: inherit;
+        transition-duration: 0.1s;
+        cursor: pointer;
+  
+        span{
+          position: absolute;
+          width: 100%;
+          text-align: center;
+          line-height: 1;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+  
+        &:hover {
+          background-color: rgba($color: grey, $alpha: 0.1);
+        }
+      }
+  
+      .header__logOutBtn{
+        width: 109px;
+        height: 51px;
+        border: 1px solid rgba($color: #000000, $alpha: 0.5);
+        border-radius: 5px;
+        color: rgba($color: #000000, $alpha: 0.75);
+        font-size: 18px;
+        background-color: inherit;
+        transition-duration: 0.1s;
+        cursor: pointer;
+        &:hover {
+          background-color: rgba($color: grey, $alpha: 0.1);
+        }
+      }
+    }
+}
