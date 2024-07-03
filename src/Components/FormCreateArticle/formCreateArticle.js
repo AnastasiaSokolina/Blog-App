@@ -13,10 +13,13 @@ import LabelCreateArticleText from './Label/LabelCreateArticleText'
 import LabelCreateArticleTitle from './Label/LabelCreateArticleTitle'
 import LabelCreatorArticleShortDescription from './Label/LabelCreatorArticleShortDescription'
 
+import { useNavigate } from 'react-router-dom'
+
 export default function FormCreateArticle(props) {
     const { item, params, successRequest, errorRequest } = props
     const token = useSelector((state) => state.reducers.logIn.token)
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     const {
         register,
         formState: { errors },
@@ -29,22 +32,6 @@ export default function FormCreateArticle(props) {
         },
     })
 
-    useEffect(() => {
-        if (successRequest) {
-          dispatch(editArticleActions.setSuccessRequest());
-        }
-        return () => dispatch(editArticleActions.resetSuccessRequest());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
-
-    useEffect(() => {
-        if (successRequest) {
-          dispatch(editArticleActions.setSuccessRequest());
-        }
-        return () => dispatch(createArticleActions.resetSuccessRequest());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
-
     const onSubmit = (data) => {
         if (params) {
           dispatch(editArticleFetch({ ...data, token, params }));
@@ -52,6 +39,29 @@ export default function FormCreateArticle(props) {
           dispatch(createArticleFetch({ ...data, token }));
         }
     }
+
+    useEffect(() => {
+      if (successRequest && !params) {
+        navigate('/')
+        dispatch(createArticleActions.resetSuccessRequest());
+      }
+    }, [successRequest, params]);
+
+    useEffect(() => {
+      if (successRequest) {
+        dispatch(editArticleActions.setSuccessRequest());
+      }
+      return () => dispatch(editArticleActions.resetSuccessRequest());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  useEffect(() => {
+      if (successRequest) {
+        dispatch(createArticleActions.setSuccessRequest());
+      }
+      return () => dispatch(createArticleActions.resetSuccessRequest());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>

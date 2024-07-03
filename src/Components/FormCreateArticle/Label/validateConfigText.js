@@ -1,15 +1,39 @@
 export const validateConfigTitle = () => ({
-    required: 'required field',
-  })
-  
-  export const validateConfigShortDescription = () => ({
-    required: 'required field',
-  })
-  
-  export const validateConfigText = () => ({
-    required: 'required field',
-  })
-  
-  export const validateConfigTag = () => ({
-    required: 'fill input or delete it',
-  })
+  required: 'Field must not be empty',
+  validate: (value) => {
+    if (value.trim() === '') {
+      return 'Field must not be empty';
+    }
+    return true;
+  },
+});
+
+export const validateConfigShortDescription = () => ({
+  required: 'Field must not be empty',
+  validate: (value) => {
+    if (value.trim() === '') {
+      return 'Field must not be empty';
+    }
+    return true;
+  },
+});
+
+export const validateConfigText = () => ({
+  required: 'Field must not be empty',
+  validate: (value) => {
+    if (value.trim() === '') {
+      return 'Field must not be empty';
+    }
+    return true;
+  },
+});
+
+export const validateConfigTag = () => ({
+  required: 'Fill input or delete it',
+  validate: (value) => {
+    if (value.trim() === '') {
+      return 'Field must not be empty';
+    }
+    return true;
+  },
+});

@@ -1,13 +1,13 @@
-import { LoadingOutlined } from '@ant-design/icons'
-import { message } from 'antd'
-import { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { LoadingOutlined } from '@ant-design/icons';
+import { message } from 'antd';
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
-import './likes.scss'
-import { fetchDislike } from './fetchDislike'
-import { fetchLike } from './fetchLike'
-import likeIcon from './like.svg'
-import likeIconLiked from './redLike.svg'
+import './likes.scss';
+import { fetchDislike } from './fetchDislike';
+import { fetchLike } from './fetchLike';
+import likeIcon from './like.svg';
+import likeIconLiked from './redLike.svg';
 
 export default function Likes(props) {
   const {
@@ -46,9 +46,7 @@ export default function Likes(props) {
         })
         .catch(() => {
           message.error('Oops! Something went wrong! Maybe you need to log into your account?');
-          setState((prevState) => {
-            return { ...prevState, loadingLike: false };
-          });
+          setState((prevState) => ({ ...prevState, loadingLike: false }));
         });
     } else {
       await fetchLike(slug, token)
@@ -69,9 +67,7 @@ export default function Likes(props) {
         .catch((err) => {
           console.log(err);
           message.error('Oops! Something went wrong! Maybe you need to log into your account?');
-          setState((prevState) => {
-            return { ...prevState, loadingLike: false };
-          });
+          setState((prevState) => ({ ...prevState, loadingLike: false }));
         });
     }
   };
@@ -100,5 +96,5 @@ export default function Likes(props) {
         </>
       )}
     </div>
-  )
+  );
 }
