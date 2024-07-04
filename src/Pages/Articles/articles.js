@@ -4,9 +4,9 @@
 /* eslint-disable import/no-named-as-default */
 /* eslint-disable import/no-named-as-default-member */
 import { Pagination, Spin } from 'antd';
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import useLocalStorage from 'use-local-storage';
+import { useEffect } from 'react';
 
 import ArticleItem from '../../Components/ArticleItem/articleItem';
 import './articles.scss';
@@ -22,8 +22,9 @@ export default function Articles() {
   const [currentPage, setCurrentPage] = useLocalStorage('currentPage', 1);
 
   useEffect(() => {
-    dispatch(articleFetch({ number: currentPage * 5, token }));
-  }, [currentPage]);
+    const requestedPage = currentPage * 5 - 5;
+    dispatch(articleFetch({ page: requestedPage, token }));
+  }, [currentPage, token]);
 
   return articlesLoaded ? (
     <section className="articlesList">

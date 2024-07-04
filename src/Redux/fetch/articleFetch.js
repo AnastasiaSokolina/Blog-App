@@ -1,8 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 // eslint-disable-next-line import/prefer-default-export
-export const articleFetch = createAsyncThunk('articlesListSlice/fetchArticles', async (action) => {
-  const { number, token } = action;
+export const articleFetch = createAsyncThunk('articlesListSlice/fetchArticles', async ({ page, token }) => {
   const options = {
     Host: 'https://blog.kata.academy',
     headers: {
@@ -10,7 +9,7 @@ export const articleFetch = createAsyncThunk('articlesListSlice/fetchArticles', 
       Authorization: `Token ${token}`,
     },
   };
-  const response = await fetch(`https://blog.kata.academy/api/articles?offset=${number}&limit=${5}`, options).then(
+  const response = await fetch(`https://blog.kata.academy/api/articles?offset=${page}&limit=${5}`, options).then(
     (answer) => answer.json(),
   );
   return {
